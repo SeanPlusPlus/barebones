@@ -9,7 +9,15 @@
   "eslintConfig": {
     "extends": "airbnb",
     "rules": {
-      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+      "react/jsx-filename-extension": [
+        1,
+        {
+          "extensions": [
+            ".js",
+            ".jsx"
+          ]
+        }
+      ]
     },
     "plugins": [
       "import"
@@ -33,6 +41,7 @@
     "jest": "^17.0.3",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
+    "react-scroll": "^1.4.4",
     "react-test-renderer": "^15.4.1"
   },
   "devDependencies": {
