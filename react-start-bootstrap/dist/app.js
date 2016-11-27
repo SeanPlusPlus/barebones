@@ -29456,6 +29456,7 @@
 	    var _this = _possibleConstructorReturn(this, (Nav.__proto__ || Object.getPrototypeOf(Nav)).call(this));
 	
 	    _this.state = {
+	      active: null,
 	      title: 'SeanPlusPlus',
 	      menu: ['download', 'features', 'contact'],
 	      scroll: _reactScroll2.default.animateScroll
