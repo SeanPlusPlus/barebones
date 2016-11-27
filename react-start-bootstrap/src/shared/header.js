@@ -1,12 +1,10 @@
 import React from 'react';
-import Scroll from 'react-scroll';
 import $ from 'jquery';
 
 class Header extends React.Component {
   constructor() {
     super();
     this.state = {
-      scroll: Scroll.animateScroll,
       message: null,
     };
   }
@@ -26,11 +24,6 @@ class Header extends React.Component {
     );
   }
 
-  handleClick(e) {
-    e.preventDefault();
-    this.state.scroll.scrollTo($(e.target.hash).offset().top);
-  }
-
   render() {
     return (
       <header>
@@ -43,7 +36,6 @@ class Header extends React.Component {
                     {this.state.message}
                   </h1>
                   <a
-                    onClick={e => this.handleClick(e)}
                     href="#download"
                     className="btn btn-outline btn-xl page-scroll"
                   >
