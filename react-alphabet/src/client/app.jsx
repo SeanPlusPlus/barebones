@@ -1,6 +1,7 @@
 import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Panel } from 'react-bootstrap';
 
 class App extends React.Component {
   constructor() {
@@ -78,47 +79,59 @@ class App extends React.Component {
     this.displayAlphabet(this.state.alphabet.start.integer, endInteger);
   }
   render() {
+    const title = 'Alphabet';
     return (
-      <div>
-        <input
-          className="form-control"
-          placeholder="start"
-          value={this.state.input.start}
-          onChange={e => this.updateStartValue(e)}
-        />
-        <input
-          className="form-control"
-          placeholder="end"
-          value={this.state.input.end}
-          onChange={e => this.updateEndValue(e)}
-        />
-        {this.state.error &&
-          <div className="alert alert-danger">error</div>
-        }
-        {!this.state.error &&
-          this.state.alphabet.characters.map(c =>
-            <li key={c}>{c}</li>
-          )
-        }
-        <hr />
+      <div className="container">
         <div className="row">
-          <div className="col-xs-4">
-            <legend>start</legend>
-            <code>character: {this.state.alphabet.start.character}</code>
-            <br />
-            <code>integer: {this.state.alphabet.start.integer}</code>
-          </div>
-          <div className="col-xs-4">
-            <legend>end</legend>
-            <code>character: {this.state.alphabet.end.character}</code>
-            <br />
-            <code>integer: {this.state.alphabet.end.integer}</code>
-          </div>
-          <div className="col-xs-4">
-            <legend>input</legend>
-            <code>start: {this.state.input.start}</code>
-            <br />
-            <code>end: {this.state.input.end}</code>
+          <div className="col-md-12">
+            <Panel header={title}>
+              <div className="row">
+                <div className="col-md-6">
+                  <input
+                    className="form-control"
+                    placeholder="start"
+                    value={this.state.input.start}
+                    onChange={e => this.updateStartValue(e)}
+                  />
+                  <input
+                    className="form-control"
+                    placeholder="end"
+                    value={this.state.input.end}
+                    onChange={e => this.updateEndValue(e)}
+                  />
+                  {this.state.error &&
+                    <div className="alert alert-danger">error</div>
+                  }
+                  {!this.state.error &&
+                    this.state.alphabet.characters.map(c =>
+                      <li key={c}>{c}</li>
+                    )
+                  }
+                </div>
+                <div className="col-md-6">
+                  <div className="row">
+                    <div className="col-xs-4">
+                      <legend>start</legend>
+                      <code>character: {this.state.alphabet.start.character}</code>
+                      <br />
+                      <code>integer: {this.state.alphabet.start.integer}</code>
+                    </div>
+                    <div className="col-xs-4">
+                      <legend>end</legend>
+                      <code>character: {this.state.alphabet.end.character}</code>
+                      <br />
+                      <code>integer: {this.state.alphabet.end.integer}</code>
+                    </div>
+                    <div className="col-xs-4">
+                      <legend>input</legend>
+                      <code>start: {this.state.input.start}</code>
+                      <br />
+                      <code>end: {this.state.input.end}</code>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Panel>
           </div>
         </div>
       </div>
